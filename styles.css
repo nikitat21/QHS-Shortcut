@@ -27,6 +27,7 @@ body {
 .eyebrow { margin: 0 0 10px; color: #a7c5e4; font-size: 11px; font-weight: 650; letter-spacing: .17em; }
 h1 { margin: 0; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
 .intro { margin: 12px 0 24px; color: #b5c3d9; font-size: 16px; line-height: 1.5; }
+.launch-caption, .launcher-help-label, .back-to-launcher, .shortcut-setup-entry { display: none; }
 .open-app {
   display: inline-flex;
   align-items: center;
@@ -46,7 +47,7 @@ h1 { margin: 0; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; letter-spa
 }
 .open-app:hover { background: #c7edff; }
 .open-app:active { background: #91c8e5; }
-.open-app:focus-visible, summary:focus-visible { outline: 3px solid #e9edff; outline-offset: 5px; }
+.open-app:focus-visible, summary:focus-visible, .help-copy a:focus-visible, .back-to-launcher:focus-visible { outline: 3px solid #e9edff; outline-offset: 5px; }
 .setup { margin-top: 30px; padding: 22px 26px; background: #111d30; border: 1px solid #2b3a51; border-radius: 20px; }
 h2 { margin: 0 0 10px; font-size: 17px; letter-spacing: -.01em; font-weight: 650; }
 .setup-intro { margin: 0 0 14px; color: #b6c8df; font-size: 14px; line-height: 1.5; }
@@ -93,6 +94,35 @@ footer { margin-top: 8px; text-align: center; color: #96a7c2; font-size: 12px; l
 @media (max-width: 620px) {
   .shortcut-path { flex-direction: column; align-items: stretch; gap: 8px; }
   .path-arrow { display: grid; place-items: center; width: 30px; flex: 0 0 30px; transform: rotate(90deg); }
+}
+/* Library windows expose their actual display mode. Keep the existing URL,
+   manifest identity and native link: older saved shortcuts continue to work.
+   Unknown/ordinary browser modes retain the complete setup view. */
+@media (display-mode: standalone), (display-mode: minimal-ui), (display-mode: window-controls-overlay) {
+  .launcher { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 48px; }
+  .welcome { flex: 0 0 auto; }
+  .app-icon { width: 152px; height: 152px; margin-bottom: 24px; }
+  h1 { font-size: clamp(28px, 4vw, 38px); }
+  .eyebrow, .intro, footer, .browser-help-label { display: none; }
+  .open-app { margin-top: 30px; min-width: min(250px, 100%); min-height: 56px; }
+  .launch-caption { display: block; margin: 18px 0 0; color: #a5b7d0; font-size: 14px; line-height: 1.6; }
+  .setup { display: none; flex: 0 0 auto; scroll-margin-top: 20px; }
+  .setup:target { display: block; }
+  .setup:target ~ .help { display: none; }
+  .help { align-self: center; width: min(100%, 480px); margin-top: 26px; }
+  .help > summary { width: fit-content; max-width: 100%; margin-inline: auto; padding-inline: 12px; color: #b1c5dd; }
+  .launcher-help-label { display: inline; }
+  .help[open] { border: 1px solid #2b3a51; border-radius: 16px; background: #111d30; }
+  .help-copy { padding: 4px 20px 16px; text-align: left; }
+  .shortcut-setup-entry { display: block; }
+  .help-copy a, .back-to-launcher { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding-inline: 4px; border-radius: 6px; color: #c7e9fb; text-decoration: underline; text-underline-offset: 4px; }
+  .back-to-launcher { margin-top: 8px; }
+}
+@media (display-mode: standalone) and (max-height: 500px), (display-mode: minimal-ui) and (max-height: 500px), (display-mode: window-controls-overlay) and (max-height: 500px) {
+  .launcher { padding-block: 20px; }
+  .app-icon { width: 96px; height: 96px; margin-bottom: 16px; }
+  .open-app { margin-top: 22px; }
+  .help { margin-top: 14px; }
 }
 @media (forced-colors: active) {
   .open-app, .setup { border: 1px solid ButtonText; }

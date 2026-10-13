@@ -28,7 +28,7 @@
   <title>Quest Home Switcher</title>
 </head>
 <body>
-  <main class="launcher">
+  <main class="launcher" id="launcher">
     <section class="welcome" aria-labelledby="title">
       <img class="app-icon" src="./icon-512.png" width="160" height="160" alt="" fetchpriority="high">
       <p class="eyebrow">YOUR HOMES. ONE PLACE.</p>
@@ -37,8 +37,9 @@
       <a class="open-app" id="open-app" href="intent://open/#Intent;scheme=app.questhomeswitcher;package=app.questhomeswitcher;S.browser_fallback_url=https%3A%2F%2Fnikitat21.github.io%2FQHS-Shortcut%2F%23help;end">
         Open QHS <span aria-hidden="true">↗</span>
       </a>
+      <p class="launch-caption">Your next Home is one click away.</p>
     </section>
-    <section class="setup" aria-labelledby="setup-title">
+    <section class="setup" id="setup" aria-labelledby="setup-title">
       <h2 id="setup-title">Keep it in your Library</h2>
       <p class="setup-intro">In <strong>Meta Quest Browser</strong> on your headset:</p>
       <ol class="shortcut-path" aria-label="Add a Library shortcut">
@@ -73,10 +74,12 @@
         </div>
       </details>
       <p class="caption">Your shortcut opens this page. Choose <strong>Open QHS</strong> to launch the app.</p>
+      <a class="back-to-launcher" href="./">Back to launcher</a>
     </section>
     <details id="help" class="help">
-      <summary>Not opening?</summary>
+      <summary><span class="browser-help-label">Not opening?</span><span class="launcher-help-label">Help &amp; setup</span></summary>
       <div class="help-copy">
+        <p class="shortcut-setup-entry"><a href="#setup">Shortcut setup <span aria-hidden="true">↗</span></a></p>
         <p>Install a shortcut-enabled QHS version first: <strong>2.1.6-rc.2 or newer</strong>. Adding this shortcut does not install the Android app.</p>
         <p>If the browser asks to open the app, allow it. If no app opens, use <strong>Unknown Sources</strong> to open QHS and check its version.</p>
         <p>No Library option? Check for a Meta Quest Browser update. You can still bookmark this page.</p>

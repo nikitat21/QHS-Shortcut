@@ -8,6 +8,13 @@ The compact guide shows **⋮ Browser menu → Add shortcut to library → Add**
 **Where is it?** expands an accessible illustration of those three steps;
 it is not an interactive browser menu and does not draw over browser controls.
 The guide works without JavaScript. Browser labels and positions can vary.
+In a Library/standalone window, the same URL becomes a focused launcher: the
+original logo, app name and **Open QHS**, with **Help & setup** available below.
+The browser's `display-mode` controls this entirely in CSS; no tracking,
+local-storage flag, automatic app launch or install-detection guess is needed.
+Ordinary browser tabs keep the setup instructions. Existing saved shortcuts keep
+their URL, manifest ID and icon. **Help & setup -> Shortcut setup** reveals the
+instructions in a Library window too; **Back to launcher** hides them again.
 The saved shortcut opens this page; **Open QHS** then launches the installed app.
 Browser confirmation may be required. QHS **2.1.6-rc.2 or newer** is needed for
 the native launch link. This page does not install or update the Android app.
