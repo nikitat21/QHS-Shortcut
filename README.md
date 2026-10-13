@@ -4,6 +4,10 @@ A small, separate launcher page for Meta Quest Browser:
 **https://nikitat21.github.io/QHS-Shortcut/**
 
 Open the page on a Quest, use the browser's Library shortcut option and confirm.
+The compact guide shows **⋮ Browser menu → Add shortcut to library → Add**.
+**Where is it?** expands an accessible illustration of those three steps;
+it is not an interactive browser menu and does not draw over browser controls.
+The guide works without JavaScript. Browser labels and positions can vary.
 The saved shortcut opens this page; **Open QHS** then launches the installed app.
 Browser confirmation may be required. QHS **2.1.6-rc.2 or newer** is needed for
 the native launch link. This page does not install or update the Android app.

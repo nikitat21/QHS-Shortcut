@@ -48,10 +48,29 @@ h1 { margin: 0; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; letter-spa
 .open-app:active { background: #91c8e5; }
 .open-app:focus-visible, summary:focus-visible { outline: 3px solid #e9edff; outline-offset: 5px; }
 .setup { margin-top: 30px; padding: 22px 26px; background: #111d30; border: 1px solid #2b3a51; border-radius: 20px; }
-h2 { margin: 0 0 16px; font-size: 17px; letter-spacing: -.01em; font-weight: 650; }
-ol { list-style: none; padding: 0; margin: 0; counter-reset: setup; display: grid; gap: 14px; }
-li { counter-increment: setup; display: flex; align-items: flex-start; gap: 13px; color: #c0ccdd; font-size: 14px; line-height: 1.5; }
-li::before { content: counter(setup); flex: 0 0 24px; width: 24px; height: 24px; display: grid; place-items: center; background: #21334c; color: #dcecff; border-radius: 50%; font-size: 12px; font-weight: 650; }
+h2 { margin: 0 0 10px; font-size: 17px; letter-spacing: -.01em; font-weight: 650; }
+.setup-intro { margin: 0 0 14px; color: #b6c8df; font-size: 14px; line-height: 1.5; }
+.shortcut-path { list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 12px; }
+.shortcut-path li { display: flex; align-items: center; gap: 10px; color: #d4e0ef; font-size: 14px; line-height: 1.5; }
+.menu-symbol { flex: 0 0 30px; display: grid; place-items: center; width: 30px; height: 36px; border: 1px solid #607b94; border-radius: 9px; color: #d7f1ff; font-size: 24px; }
+.path-arrow { color: #819db8; font-size: 19px; }
+.shortcut-guide { margin-top: 14px; border-top: 1px solid #2b3a51; }
+.shortcut-guide summary { width: fit-content; max-width: 100%; color: #c7e9fb; padding-inline: 4px; font-size: 14px; }
+.guide-copy > p { margin: 4px 0 14px; color: #b6c8df; font-size: 14px; line-height: 1.6; }
+.browser-guide { margin: 0; }
+.browser-sketch { border: 1px solid #45576e; border-radius: 14px; overflow: hidden; background: #0b1321; }
+.guide-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; background: #1c2839; border-bottom: 1px solid #384b62; }
+.guide-address { min-width: 0; color: #afbed0; font-size: 13px; }
+.guide-dots { position: relative; flex: 0 0 38px; height: 38px; display: grid; place-items: center; border: 2px solid #a6ddf5; border-radius: 10px; background: #233d50; color: #fff; font-size: 27px; }
+.guide-number { flex: 0 0 22px; display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #b6e4f8; color: #102335; font-size: 12px; font-weight: 750; }
+.guide-dots .guide-number { position: absolute; right: 27px; top: -6px; }
+.guide-dropdown { width: min(100% - 32px, 300px); margin: 0 16px 18px auto; padding: 12px; border: 1px solid #40546a; border-top: 0; border-radius: 0 0 12px 12px; background: #1a283b; }
+.guide-menu-line { display: block; width: 44%; height: 5px; margin: 2px 10px 12px; border-radius: 3px; background: #405066; }
+.guide-menu-line-short { width: 30%; margin-top: 12px; margin-bottom: 2px; }
+.guide-choice { display: flex; align-items: center; gap: 9px; padding: 9px; border: 1px solid #91cde6; border-radius: 8px; background: #243f52; color: #e8f8ff; font-size: 13px; line-height: 1.5; }
+.guide-confirm { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 16px 16px; padding: 14px; border: 1px solid #3a4e67; border-radius: 10px; background: #19263a; color: #dce9f8; font-size: 13px; line-height: 1.5; }
+.guide-add { display: flex; align-items: center; flex-shrink: 0; gap: 8px; padding: 7px 12px 7px 8px; border: 1px solid #a6ddf5; border-radius: 8px; color: #e8f8ff; background: #243f52; font-weight: 650; }
+figcaption { margin-top: 10px; color: #a2b1c8; font-size: 12px; line-height: 1.5; }
 strong { color: #f1f6ff; font-weight: 600; }
 .caption { margin: 16px 0 0; color: #a2b1c8; font-size: 12px; line-height: 1.5; }
 .help { margin-top: 8px; color: #b6c8df; font-size: 14px; }
@@ -71,6 +90,11 @@ footer { margin-top: 8px; text-align: center; color: #96a7c2; font-size: 12px; l
   .setup { padding: 20px 18px; }
   .open-app { width: 100%; min-width: 0; }
 }
+@media (max-width: 620px) {
+  .shortcut-path { flex-direction: column; align-items: stretch; gap: 8px; }
+  .path-arrow { display: grid; place-items: center; width: 30px; flex: 0 0 30px; transform: rotate(90deg); }
+}
 @media (forced-colors: active) {
   .open-app, .setup { border: 1px solid ButtonText; }
+  .guide-number { border: 1px solid CanvasText; }
 }
