@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080e1b">
+  <meta name="color-scheme" content="dark">
+  <meta name="application-name" content="Quest Home Switcher">
+  <meta name="description" content="A simple shortcut to open Quest Home Switcher from your Quest Library.">
+  <meta property="og:title" content="Quest Home Switcher">
+  <meta property="og:description" content="Your Homes. One place.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nikitat21.github.io/QHS-Shortcut/">
+  <meta property="og:image" content="https://nikitat21.github.io/QHS-Shortcut/library-card.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Quest Home Switcher logo">
+  <link rel="canonical" href="https://nikitat21.github.io/QHS-Shortcut/">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+  <title>Quest Home Switcher</title>
+</head>
+<body>
+  <main class="launcher">
+    <section class="welcome" aria-labelledby="title">
+      <img class="app-icon" src="./icon-512.png" width="160" height="160" alt="" fetchpriority="high">
+      <p class="eyebrow">YOUR HOMES. ONE PLACE.</p>
+      <h1 id="title">Quest Home Switcher</h1>
+      <p class="intro">A little shortcut to your favourite places.</p>
+      <a class="open-app" id="open-app" href="intent://open/#Intent;scheme=app.questhomeswitcher;package=app.questhomeswitcher;S.browser_fallback_url=https%3A%2F%2Fnikitat21.github.io%2FQHS-Shortcut%2F%23help;end">
+        Open QHS <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+    <section class="setup" aria-labelledby="setup-title">
+      <h2 id="setup-title">Keep it in your Library</h2>
+      <ol>
+        <li><span>Open this page in <strong>Meta Quest Browser</strong> on your headset.</span></li>
+        <li><span>Use the browser’s <strong>Add to Library</strong> or <strong>Add shortcut</strong> option, then confirm.</span></li>
+        <li><span>Choose <strong>Quest Home Switcher</strong> in your Library, then <strong>Open QHS</strong>.</span></li>
+      </ol>
+      <p class="caption">The option’s name and position can vary with your browser version.</p>
+    </section>
+    <details id="help" class="help">
+      <summary>Not opening?</summary>
+      <div class="help-copy">
+        <p>Install a shortcut-enabled QHS version first: <strong>2.1.6-rc.2 or newer</strong>. Adding this shortcut does not install the Android app.</p>
+        <p>If the browser asks to open the app, allow it. If no app opens, use <strong>Unknown Sources</strong> to open QHS and check its version.</p>
+        <p>No Library option? Check for a Meta Quest Browser update. You can still bookmark this page.</p>
+      </div>
+    </details>
+    <footer>Just a launcher. Your Homes and settings stay in QHS.</footer>
+  </main>
+</body>
+</html>

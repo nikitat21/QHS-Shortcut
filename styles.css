@@ -1,0 +1,76 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #080e1b;
+  color: #f1f6ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 280px;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 0, #14243e 0, #080e1b 65%);
+}
+.launcher { width: min(100% - 40px, 620px); margin: 0 auto; padding: 30px 0 24px; }
+.welcome { text-align: center; }
+.app-icon {
+  display: block;
+  width: 144px;
+  height: 144px;
+  object-fit: contain;
+  border-radius: 22%;
+  margin: 0 auto 18px;
+  filter: drop-shadow(0 12px 30px #01071380);
+}
+.eyebrow { margin: 0 0 10px; color: #a7c5e4; font-size: 11px; font-weight: 650; letter-spacing: .17em; }
+h1 { margin: 0; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
+.intro { margin: 12px 0 24px; color: #b5c3d9; font-size: 16px; line-height: 1.5; }
+.open-app {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 230px;
+  min-height: 54px;
+  padding: 12px 24px;
+  border: 1px solid #aee7ff;
+  border-radius: 16px;
+  background: #a6ddf5;
+  color: #0a2234;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  box-shadow: 0 5px 22px #52b8df13;
+}
+.open-app:hover { background: #c7edff; }
+.open-app:active { background: #91c8e5; }
+.open-app:focus-visible, summary:focus-visible { outline: 3px solid #e9edff; outline-offset: 5px; }
+.setup { margin-top: 30px; padding: 22px 26px; background: #111d30; border: 1px solid #2b3a51; border-radius: 20px; }
+h2 { margin: 0 0 16px; font-size: 17px; letter-spacing: -.01em; font-weight: 650; }
+ol { list-style: none; padding: 0; margin: 0; counter-reset: setup; display: grid; gap: 14px; }
+li { counter-increment: setup; display: flex; align-items: flex-start; gap: 13px; color: #c0ccdd; font-size: 14px; line-height: 1.5; }
+li::before { content: counter(setup); flex: 0 0 24px; width: 24px; height: 24px; display: grid; place-items: center; background: #21334c; color: #dcecff; border-radius: 50%; font-size: 12px; font-weight: 650; }
+strong { color: #f1f6ff; font-weight: 600; }
+.caption { margin: 16px 0 0; color: #a2b1c8; font-size: 12px; line-height: 1.5; }
+.help { margin-top: 8px; color: #b6c8df; font-size: 14px; }
+summary { min-height: 48px; padding: 14px 8px; cursor: pointer; border-radius: 8px; }
+.help-copy { padding: 0 10px 8px; line-height: 1.65; }
+.help-copy p { margin: 0 0 12px; }
+footer { margin-top: 8px; text-align: center; color: #96a7c2; font-size: 12px; line-height: 1.5; }
+@media (min-width: 700px) and (max-height: 700px) {
+  .launcher { padding-top: 20px; }
+  .app-icon { width: 102px; height: 102px; margin-bottom: 12px; }
+  .intro { margin-bottom: 18px; }
+  .setup { margin-top: 22px; padding-top: 18px; padding-bottom: 18px; }
+}
+@media (max-width: 420px) {
+  .launcher { width: calc(100% - 32px); padding-top: 24px; }
+  .app-icon { width: 112px; height: 112px; }
+  .setup { padding: 20px 18px; }
+  .open-app { width: 100%; min-width: 0; }
+}
+@media (forced-colors: active) {
+  .open-app, .setup { border: 1px solid ButtonText; }
+}
