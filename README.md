@@ -16,7 +16,7 @@ Ordinary browser tabs keep the setup instructions. Existing saved shortcuts keep
 their URL, manifest ID and icon. **Help & setup -> Shortcut setup** reveals the
 instructions in a Library window too; **Back to launcher** hides them again.
 The saved shortcut opens this page; **Open QHS** then launches the installed app.
-Browser confirmation may be required. QHS **2.1.6-rc.2 or newer** is needed for
+Browser confirmation may be required. QHS **2.1.6 or newer** is needed for
 the native launch link. This page does not install or update the Android app.
 
 The existing QHS logo has faithful 192- and 512-pixel exports for the favicon

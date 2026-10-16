@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'qhs-shortcut-static-';
-const CACHE_NAME = CACHE_PREFIX + 'v4';
+const CACHE_NAME = CACHE_PREFIX + 'v5';
 const ROOT = new URL('./', self.location.href);
 const ASSETS = ['./', './index.html', './styles.css', './app.js', './icon-192.png', './icon-512.png', './manifest.webmanifest']
   .map(path => new URL(path, ROOT).href);
